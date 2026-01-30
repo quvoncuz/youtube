@@ -1,8 +1,13 @@
-package dasturlash.uz.entity;
+package dasturlash.uz.entity.comment;
 
+import dasturlash.uz.entity.ProfileEntity;
+import dasturlash.uz.entity.video.VideoEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -30,4 +35,8 @@ public class CommentEntity {
 
     @Column(name = "reply_id")
     private String replyId;
+
+    @CreationTimestamp
+    @Column(name = "created_date")
+    private LocalDateTime createdDate;
 }

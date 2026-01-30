@@ -20,6 +20,9 @@ public class ChannelEntity {
     @Column
     private String name;
 
+    @Column
+    private String username;
+
     @Column(name = "photo_id")
     private String photoId;
     @OneToOne

@@ -26,6 +26,7 @@ public class ReportEntity {
     @Column
     private String content;
 
+    // channel, comment, video, profile
     @Column(name = "reported_id")
     private String reportedId;
 

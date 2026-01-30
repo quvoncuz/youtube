@@ -1,5 +1,6 @@
-package dasturlash.uz.entity;
+package dasturlash.uz.entity.video;
 
+import dasturlash.uz.entity.ProfileEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

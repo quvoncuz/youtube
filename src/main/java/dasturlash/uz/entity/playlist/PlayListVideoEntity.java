@@ -1,6 +1,6 @@
-package dasturlash.uz.entity;
+package dasturlash.uz.entity.playlist;
 
-import dasturlash.uz.enums.Emotion;
+import dasturlash.uz.entity.video.VideoEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,17 +11,17 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-@Table(name = "video_likes")
-public class VideoLikeEntity {
+@Table(name = "play_list_video")
+public class PlayListVideoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @Column(name = "profile_id")
-    private String profileId;
+    @Column(name = "playlist_id")
+    private String playListId;
+    @JoinColumn(name = "playlist_id", insertable = false, updatable = false)
     @ManyToOne
-    @JoinColumn(name = "video_id", insertable = false, updatable = false)
-    private ProfileEntity profile;
+    private PlayListEntity playList;
 
     @Column(name = "video_id")
     private String videoId;
@@ -32,8 +32,6 @@ public class VideoLikeEntity {
     @Column(name = "created_date")
     @CreationTimestamp
     private LocalDateTime createdDate;
-
-    @Enumerated(EnumType.STRING)
-    @Column
-    private Emotion emotion;
+    @Column(name = "order_number")
+    private Integer orderNumber;
 }

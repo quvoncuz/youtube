@@ -1,5 +1,8 @@
-package dasturlash.uz.entity;
+package dasturlash.uz.entity.video;
 
+import dasturlash.uz.entity.AttachEntity;
+import dasturlash.uz.entity.CategoryEntity;
+import dasturlash.uz.entity.ChannelEntity;
 import dasturlash.uz.enums.StatusEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -28,7 +31,7 @@ public class VideoEntity {
     @Column(name = "category_id")
     private Integer categoryId;
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", insertable = false, updatable = false)
     private CategoryEntity category;
 
     @Column(name = "attach_id")

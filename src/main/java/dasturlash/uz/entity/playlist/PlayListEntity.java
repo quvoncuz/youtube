@@ -1,6 +1,7 @@
-package dasturlash.uz.entity;
+package dasturlash.uz.entity.playlist;
 
-import dasturlash.uz.enums.PlaylistStatus;
+import dasturlash.uz.entity.ChannelEntity;
+import dasturlash.uz.enums.PlayListStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +28,7 @@ public class PlayListEntity {
     private String description;
 
     @Column
-    private PlaylistStatus status;
+    private PlayListStatus status;
 
     @Column(name = "order_number")
     private Integer orderNumber;
